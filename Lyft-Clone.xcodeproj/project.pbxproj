@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		1106AD71263950B6009548AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD70263950B6009548AB /* AppDelegate.swift */; };
 		1106AD73263950B6009548AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD72263950B6009548AB /* SceneDelegate.swift */; };
-		1106AD75263950B6009548AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD74263950B6009548AB /* ViewController.swift */; };
 		1106AD78263950B6009548AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106AD76263950B6009548AB /* Main.storyboard */; };
 		1106AD7A263950B7009548AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106AD79263950B7009548AB /* Assets.xcassets */; };
 		1106AD7D263950B8009548AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106AD7B263950B8009548AB /* LaunchScreen.storyboard */; };
+		1106AD8B263953B6009548AB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD8A263953B6009548AB /* Location.swift */; };
+		1106AD8F26395421009548AB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD8E26395421009548AB /* LocationService.swift */; };
+		1106AD9226395571009548AB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1106AD9126395571009548AB /* locations.json */; };
+		1106AD9526395716009548AB /* RideQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD9426395716009548AB /* RideQuote.swift */; };
+		1106AD98263957B3009548AB /* RideQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD97263957B3009548AB /* RideQuoteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1106AD6D263950B6009548AB /* Lyft-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lyft-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1106AD70263950B6009548AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1106AD72263950B6009548AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1106AD74263950B6009548AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1106AD77263950B6009548AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1106AD79263950B7009548AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1106AD7C263950B8009548AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1106AD7E263950B8009548AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1106AD8A263953B6009548AB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1106AD8E26395421009548AB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		1106AD9126395571009548AB /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		1106AD9426395716009548AB /* RideQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuote.swift; sourceTree = "<group>"; };
+		1106AD97263957B3009548AB /* RideQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuoteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		1106AD6F263950B6009548AB /* Lyft-Clone */ = {
 			isa = PBXGroup;
 			children = (
-				1106AD70263950B6009548AB /* AppDelegate.swift */,
-				1106AD72263950B6009548AB /* SceneDelegate.swift */,
-				1106AD74263950B6009548AB /* ViewController.swift */,
-				1106AD76263950B6009548AB /* Main.storyboard */,
+				1106AD8526395153009548AB /* Model */,
+				1106AD8626395159009548AB /* View */,
+				1106AD872639515F009548AB /* Controller */,
+				1106AD8826395169009548AB /* Supporting Files */,
 				1106AD79263950B7009548AB /* Assets.xcassets */,
-				1106AD7B263950B8009548AB /* LaunchScreen.storyboard */,
 				1106AD7E263950B8009548AB /* Info.plist */,
 			);
 			path = "Lyft-Clone";
+			sourceTree = "<group>";
+		};
+		1106AD8526395153009548AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1106AD8D26395415009548AB /* Service */,
+				1106AD8A263953B6009548AB /* Location.swift */,
+				1106AD9426395716009548AB /* RideQuote.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1106AD8626395159009548AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1106AD76263950B6009548AB /* Main.storyboard */,
+				1106AD7B263950B8009548AB /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1106AD872639515F009548AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1106AD8826395169009548AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1106AD9126395571009548AB /* locations.json */,
+				1106AD70263950B6009548AB /* AppDelegate.swift */,
+				1106AD72263950B6009548AB /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1106AD8D26395415009548AB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1106AD8E26395421009548AB /* LocationService.swift */,
+				1106AD97263957B3009548AB /* RideQuoteService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +178,7 @@
 			files = (
 				1106AD7D263950B8009548AB /* LaunchScreen.storyboard in Resources */,
 				1106AD7A263950B7009548AB /* Assets.xcassets in Resources */,
+				1106AD9226395571009548AB /* locations.json in Resources */,
 				1106AD78263950B6009548AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1106AD75263950B6009548AB /* ViewController.swift in Sources */,
+				1106AD98263957B3009548AB /* RideQuoteService.swift in Sources */,
 				1106AD71263950B6009548AB /* AppDelegate.swift in Sources */,
+				1106AD8B263953B6009548AB /* Location.swift in Sources */,
+				1106AD8F26395421009548AB /* LocationService.swift in Sources */,
+				1106AD9526395716009548AB /* RideQuote.swift in Sources */,
 				1106AD73263950B6009548AB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
