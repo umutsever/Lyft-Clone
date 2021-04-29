@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i5Y-a2-Srx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="sbf-cZ-xEC">
             <objects>
-                <viewController id="i5Y-a2-Srx" sceneMemberID="viewController">
+                <viewController id="i5Y-a2-Srx" customClass="HomeViewController" customModule="Lyft_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lE4-cd-kan">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,6 +36,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsA-kc-On0">
                                 <rect key="frame" x="15" y="592" width="384" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vc6-9l-5Q2"/>
                                 </constraints>
@@ -48,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="652" width="414" height="244"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="7HE-Sc-Zkl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" rowHeight="60" id="7HE-Sc-Zkl" customClass="LocationCell" customModule="Lyft_Clone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7HE-Sc-Zkl" id="u5e-ao-dz0">
@@ -85,8 +86,16 @@
                                                 <constraint firstItem="9U9-XH-aZM" firstAttribute="centerY" secondItem="u5e-ao-dz0" secondAttribute="centerY" constant="-7" id="Zie-fW-hvU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="adressLine1Label" destination="9U9-XH-aZM" id="hHN-6n-Cw8"/>
+                                            <outlet property="adressLine2Label" destination="QRM-Wj-7yR" id="SX9-tk-rOY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="i5Y-a2-Srx" id="JeQ-tK-10H"/>
+                                    <outlet property="delegate" destination="i5Y-a2-Srx" id="RgB-IT-Yci"/>
+                                </connections>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="4p4-nc-Xyj" userLabel="Search">
                                 <rect key="frame" x="20" y="605.5" width="25" height="25"/>
@@ -113,6 +122,9 @@
                             <constraint firstItem="SFG-SP-GDS" firstAttribute="top" secondItem="M5M-QN-EmH" secondAttribute="bottom" constant="10" id="y5K-e5-qWE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchButton" destination="ZsA-kc-On0" id="83g-t3-d3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prh-JA-rel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
