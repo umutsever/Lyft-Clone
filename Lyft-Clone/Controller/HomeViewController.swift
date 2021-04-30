@@ -80,6 +80,45 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
         let distance = 200.0
         let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
         mapView.setRegion(region, animated: true)
+        
+        
+        let lat = userLocation.coordinate.latitude
+        let lng = userLocation.coordinate.longitude
+        let offset = 0.00075
+        
+        let coord1 = CLLocationCoordinate2D(latitude: lat - offset, longitude: lng - offset)
+        let coord2 = CLLocationCoordinate2D(latitude: lat, longitude: lng + offset)
+        let coord3 = CLLocationCoordinate2D(latitude: lat, longitude: lng - offset)
+        
+        //Create 3 vehicles annotations and add them to the mapview
+        mapView.addAnnotations([
+            VehicleAnnotation(coordinate: coord1),
+            VehicleAnnotation(coordinate: coord2),
+            VehicleAnnotation(coordinate: coord3)
+        ])
+    }
+    
+    
+    //Creating custom annotations
+     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        //Don't show custom annotation if it is user location
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        //Custom Annotation
+        let reuseIdentifier = "VehicleAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+            
+        } else {
+            annotationView?.annotation = annotation
+        }
+        annotationView?.image = UIImage(named: "car")
+        annotationView?.transform = CGAffineTransform(rotationAngle: CGFloat(arc4random_uniform(360) * 180) / CGFloat.pi)
+        return annotationView
     }
 
 }
