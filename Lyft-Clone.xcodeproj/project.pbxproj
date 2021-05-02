@@ -20,6 +20,7 @@
 		1106AD9B263962B5009548AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106AD9A263962B5009548AB /* HomeViewController.swift */; };
 		114F090B263AA11B00D3D7EF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F090A263AA11B00D3D7EF /* LocationCell.swift */; };
 		114F0953263C77D500D3D7EF /* VehicleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F0952263C77D500D3D7EF /* VehicleAnnotation.swift */; };
+		114F0956263ED1ED00D3D7EF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F0955263ED1ED00D3D7EF /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1106AD9A263962B5009548AB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		114F090A263AA11B00D3D7EF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		114F0952263C77D500D3D7EF /* VehicleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAnnotation.swift; sourceTree = "<group>"; };
+		114F0955263ED1ED00D3D7EF /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1106AD9A263962B5009548AB /* HomeViewController.swift */,
+				114F0955263ED1ED00D3D7EF /* LocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				1106AD8B263953B6009548AB /* Location.swift in Sources */,
 				1106AD8F26395421009548AB /* LocationService.swift in Sources */,
 				1106AD9526395716009548AB /* RideQuote.swift in Sources */,
+				114F0956263ED1ED00D3D7EF /* LocationViewController.swift in Sources */,
 				1106AD9B263962B5009548AB /* HomeViewController.swift in Sources */,
 				114F0953263C77D500D3D7EF /* VehicleAnnotation.swift in Sources */,
 				114F090B263AA11B00D3D7EF /* LocationCell.swift in Sources */,
